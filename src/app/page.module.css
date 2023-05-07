@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+.scoreP {
+  margin-right: 5rem;
+}
+
+.question {
+  margin: 3rem;
+  width: 60%;
+  height: 50%;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  align-items: center;
+}
+
+.button {
+  margin: 1rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
