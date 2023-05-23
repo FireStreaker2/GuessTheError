@@ -13,9 +13,13 @@ export default function GameInterface() {
     }
 
     const restart = (response, answer) => {
-        setScore(score = 0);
-        setQuestionNumber(questionNumber = 1);
         alert(`Sorry, but your answer was wrong. You answered: ${response}, but it was actually ${answer}. Final Score: ${score}`);
+        if (score === 0) {
+            window.location.reload();
+        } else {
+            setScore(score = 0);
+            setQuestionNumber(questionNumber = 1);
+        }
     }
 
     const httpStatusCodes = {
@@ -129,8 +133,6 @@ export default function GameInterface() {
 
         (response == answer) ? increment() : restart(response, answer);
     }
-
-
 
     return (
         <main>

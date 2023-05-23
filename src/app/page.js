@@ -17,7 +17,6 @@ export default function Home() {
     * 
 
     This can be found in the GameInterface.js file
-
   */
   
   return (
