@@ -4,22 +4,22 @@ import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function GameInterface() {
-    var [score, setScore] = useState(0);
-    var [questionNumber, setQuestionNumber] = useState(1);
+    const [score, setScore] = useState(0);
+    const [questionNumber, setQuestionNumber] = useState(1);
 
     const increment = () => {
-        setScore(score += 50);
-        setQuestionNumber(questionNumber += 1);
+        setScore(score + 50);
+        setQuestionNumber(questionNumber + 1);
+    }
+
+    const reset = () => {
+        setScore(0);
+        setQuestionNumber(1);
     }
 
     const restart = (response, answer) => {
         alert(`Sorry, but your answer was wrong. You answered: ${response}, but it was actually ${answer}. Final Score: ${score}`);
-        if (score === 0) {
-            window.location.reload();
-        } else {
-            setScore(score = 0);
-            setQuestionNumber(questionNumber = 1);
-        }
+        (score === 0) ? window.location.reload() : reset();
     }
 
     const httpStatusCodes = {
@@ -129,8 +129,6 @@ export default function GameInterface() {
 
     const validate = (event) => {
         var response = event.target.innerText;
-        console.log(response);
-
         (response == answer) ? increment() : restart(response, answer);
     }
 

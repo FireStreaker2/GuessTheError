@@ -31,9 +31,21 @@
   justify-content: center;
 }
 
+@media (prefers-color-scheme: dark) {
+  .question {
+    background-color: #fff;
+  }
+
+  .question p {
+    color: #000;
+  }
+}
+
+
 .hyperlink {
   text-decoration: underline;
-  color: rgb(1, 9, 56);
+  font-size: larger;
+  margin: 0.5rem;
 }
 
 .button {
